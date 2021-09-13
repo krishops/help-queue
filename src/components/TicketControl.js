@@ -2,7 +2,7 @@ import React from 'react';
 import NewTicketForm from './NewTicketForm';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
-import EditTicketForm from '.EditTicketForm'
+import EditTicketForm from './EditTicketForm';
 
 class TicketControl extends React.Component {
 
@@ -43,7 +43,7 @@ class TicketControl extends React.Component {
 
   handleDeletingTicket = (id) => {
     const newMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== id);
-      this.setSTate({
+      this.setState({
         masterTicketList: newMasterTicketList,
         selectedTicket: null
       });
@@ -54,7 +54,7 @@ class TicketControl extends React.Component {
   }
 
   handleEditingTicketInList = (ticketToEdit) => {
-    const editedMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== this.stae.selectedTicket.id).concat(ticketToEdit);
+    const editedMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== this.state.selectedTicket.id).concat(ticketToEdit);
     this.setState({
       masterTicketList: editedMasterTicketList,
       editing: false,

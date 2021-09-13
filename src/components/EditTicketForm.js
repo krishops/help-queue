@@ -1,5 +1,5 @@
 import React from "react";
-import ReusableForm from "./Reusable Form";
+import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
 function EditTicketForm (props) {
